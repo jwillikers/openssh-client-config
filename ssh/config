@@ -1,0 +1,6 @@
+Host rockpro64.lan.jwillikers.io
+    Port 2222
+
+Host rockpro64 rockpro64.jwillikers.io
+    Hostname rockpro64
+    Port 2222
