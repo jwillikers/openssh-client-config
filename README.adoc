@@ -37,11 +37,11 @@ git clone git@github.com:jwillikers/openssh-client-config.git
 cd openssh-client-config
 ----
 
-. Create the `~/.config/ssh` and `~/.ssh/config` directories.
+. Create the `~/.config/ssh/config.d` and `~/.ssh/config` directories.
 +
 [,sh]
 ----
-mkdir --parents ~/.config/ssh ~/.ssh
+mkdir --parents ~/.config/ssh/config.d ~/.ssh
 ----
 
 . Symlink the OpenSSH client configuration file to the configuration directory.
@@ -55,7 +55,7 @@ ln --force --relative --symbolic ssh/config ~/.ssh/config
 +
 [,sh]
 ----
-ln --force --relative --symbolic ssh/config.d ~/.config/ssh/config.d
+ln --force --relative --symbolic ssh/config.d/*.conf ~/.config/ssh/config.d
 ----
 
 == Code of Conduct
