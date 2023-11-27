@@ -23,6 +23,13 @@ The following instructions detail how to use and sync this repository.
 
 Install these settings with the following instructions.
 
+. Create the `~/Projects` and `~/.ssh/config` directories.
++
+[,sh]
+----
+mkdir --parents ~/.ssh/config ~/Projects
+----
+
 . Clone this repository.
 +
 [,sh]
@@ -30,57 +37,11 @@ Install these settings with the following instructions.
 git -C ~/Projects clone git@github.com:jwillikers/openssh-client-config.git
 ----
 
-. Create the OpenSSH client configuration directory in the user's home directory.
+. Symlink the OpenSSH client configuration files to the configuration directory.
 +
 [,sh]
 ----
-mkdir ~/.ssh/config
-----
-
-. Copy the OpenSSH client configuration files to the system configuration directory.
-+
-[,sh]
-----
-cp ~/Projects/openssh-client-config/ssh/config ~/.ssh/config
-----
-
-=== Update
-
-To update the settings in this repository from an existing installation, follow these steps.
-
-. If you haven't already done so, clone this repository.
-+
-[,sh]
-----
-git -C ~/Projects clone git@github.com:jwillikers/openssh-client-config.git
-----
-
-. Copy the OpenSSH server configuration files from the system directory to the repository.
-+
-[,sh]
-----
-cp ~/.ssh/config ~/Projects/openssh-client-config/ssh/config
-----
-
-. Stage the updated file.
-+
-[,sh]
-----
-git -C ~/Projects/openssh-client-config add -A
-----
-
-. Commit.
-+
-[,sh]
-----
-git -C ~/Projects/openssh-client-config commit -m "Update configuration putting all others to shame"
-----
-
-. Push the changes back to the central repository.
-+
-[,sh]
-----
-git -C ~/Projects/openssh-client-config push
+ln --relative --symbolic ~/Projects/openssh-client-config/ssh/config ~/.ssh/config
 ----
 
 == Code of Conduct
