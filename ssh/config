@@ -1,6 +1,6 @@
-Host rockpro64.lan.jwillikers.io
+Host meerkat.lan.jwillikers.io
     Port 2222
 
-Host rockpro64 rockpro64.jwillikers.io
-    Hostname rockpro64
+Host meerkat meerkat.jwillikers.io
+    Hostname meerkat
     Port 2222

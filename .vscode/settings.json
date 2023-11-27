@@ -4,6 +4,7 @@
         "ifdef",
         "jwillikers",
         "mkdir",
-        "ostree"
+        "ostree",
+        "rockpro"
     ]
 }
