@@ -23,25 +23,39 @@ The following instructions detail how to use and sync this repository.
 
 Install these settings with the following instructions.
 
-. Create the `~/Projects` and `~/.ssh/config` directories.
-+
-[,sh]
-----
-mkdir --parents ~/.ssh/config ~/Projects
-----
-
 . Clone this repository.
 +
 [,sh]
 ----
-git -C ~/Projects clone git@github.com:jwillikers/openssh-client-config.git
+git clone git@github.com:jwillikers/openssh-client-config.git
 ----
 
-. Symlink the OpenSSH client configuration files to the configuration directory.
+. Change to the repository directory.
 +
 [,sh]
 ----
-ln --relative --symbolic ~/Projects/openssh-client-config/ssh/config ~/.ssh/config
+cd openssh-client-config
+----
+
+. Create the `~/.config/ssh` and `~/.ssh/config` directories.
++
+[,sh]
+----
+mkdir --parents ~/.config/ssh ~/.ssh
+----
+
+. Symlink the OpenSSH client configuration file to the configuration directory.
++
+[,sh]
+----
+ln --force --relative --symbolic ssh/config ~/.ssh/config
+----
+
+. Symlink the OpenSSH client configuration directory to `~/.config/ssh/config.d`.
++
+[,sh]
+----
+ln --force --relative --symbolic ssh/config.d ~/.config/ssh/config.d
 ----
 
 == Code of Conduct

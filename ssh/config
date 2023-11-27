@@ -1,6 +1,1 @@
-Host meerkat.lan.jwillikers.io
-    Port 2222
-
-Host meerkat meerkat.jwillikers.io
-    Hostname meerkat
-    Port 2222
+Include ~/.config/ssh/config.d/*.conf
