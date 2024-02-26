@@ -9,6 +9,7 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
+:just: https://github.com/casey/just[just]
 :openssh: https://www.openssh.com/[OpenSSH]
 
 My user's {OpenSSH} client configuration.
@@ -22,6 +23,8 @@ The following instructions detail how to use and sync this repository.
 === Install
 
 Install these settings with the following instructions.
+
+. Install {just} by following the instructions in the https://github.com/casey/just?tab=readme-ov-file#installation[installation section].
 
 . Clone this repository.
 +
@@ -37,25 +40,11 @@ git clone git@github.com:jwillikers/openssh-client-config.git
 cd openssh-client-config
 ----
 
-. Create the `~/.config/ssh/config.d` and `~/.ssh/config` directories.
+. Run `just install` to install everything.
 +
 [,sh]
 ----
-mkdir --parents ~/.config/ssh/config.d ~/.ssh
-----
-
-. Symlink the OpenSSH client configuration file to the configuration directory.
-+
-[,sh]
-----
-ln --force --relative --symbolic ssh/config ~/.ssh/config
-----
-
-. Symlink the OpenSSH client configuration directory to `~/.config/ssh/config.d`.
-+
-[,sh]
-----
-ln --force --relative --symbolic ssh/config.d/*.conf ~/.config/ssh/config.d
+just install
 ----
 
 == Code of Conduct
@@ -69,7 +58,7 @@ Please refer to the bundled link:LICENSE.adoc[license].
 
 == Copyright
 
-© 2023 Jordan Williams
+© 2023-2024 Jordan Williams
 
 == Authors
 
