@@ -40,11 +40,11 @@ git clone git@github.com:jwillikers/openssh-client-config.git
 cd openssh-client-config
 ----
 
-. Run `just install` to install everything.
+. Run `just` to install everything.
 +
 [,sh]
 ----
-just install
+just
 ----
 
 == Code of Conduct
